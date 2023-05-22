@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# TAMK Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a portfolio made for Tampere University of Applied Sciences.\
+Demo: https://portfoliotamk.winphan199.online/
 
 ## Available Scripts
 
