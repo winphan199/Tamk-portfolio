@@ -73,12 +73,18 @@ function Header() {
   const [isScrollingDown, setIsScrollingDown] = useState(false);
 
   useLayoutEffect(() => {
+    if (window.scrollY > 40) {
+      setIsScrollingDown(true);
+    } else {
+      setIsScrollingDown(false);
+    }
+
     addEventListener('scroll', handleScroll);
 
     return () => {
       removeEventListener('scroll', handleScroll);
     };
-  });
+  }, []);
 
   const handleScroll = () => {
     if (window.scrollY > 40) {

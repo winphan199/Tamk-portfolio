@@ -1,3 +1,4 @@
+import { Section } from '../UI';
 import AboutCard from './AboutCard';
 
 interface AboutInfo {
@@ -43,11 +44,7 @@ const AboutInfoList: AboutInfo[] = [
 
 function AboutSection() {
   return (
-    <section className="py-20 px-12">
-      <div>
-        <h6 className="text-lg mb-2 text-brand font-medium">About Us</h6>
-        <h1 className="text-2xl font-semibold">What We Offer</h1>
-      </div>
+    <Section>
       <div>
         {AboutInfoList.map((info, index) => {
           let imageFirst = false;
@@ -69,7 +66,7 @@ function AboutSection() {
           );
         })}
       </div>
-    </section>
+    </Section>
   );
 }
 

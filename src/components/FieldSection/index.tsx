@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import classNames from 'classnames';
-import * as SlIcons from 'react-icons/sl';
-import * as TfiIcons from 'react-icons/tfi';
 import * as FaIcons from 'react-icons/fa';
 import * as DiIcons from 'react-icons/di';
 import * as Io5Icons from 'react-icons/io5';
@@ -10,6 +8,7 @@ import * as SiIcons from 'react-icons/si';
 
 import { IField } from './Interface';
 import FieldCard from './FieldCard';
+import { Section } from '../UI';
 
 const FIELDS: IField[] = [
   {
@@ -217,7 +216,7 @@ const FIELDS: IField[] = [
 
 export default function FieldSection() {
   return (
-    <section className="bg-brand/80 w-full py-20 px-12">
+    <Section className="bg-brand/80 w-full">
       <div>
         <h6 className="text-lg mb-2 text-white font-medium">Fields</h6>
         <h1 className="text-2xl text-white font-semibold">What We Are Working On</h1>
@@ -227,6 +226,6 @@ export default function FieldSection() {
           <FieldCard key={field.id} name={field.name} description={field.description} techList={field.techList} />
         ))}
       </div>
-    </section>
+    </Section>
   );
 }
