@@ -1,13 +1,16 @@
+import { useState, useEffect } from 'react';
+
 import ProjectWrappers from '~/components/ProjectsWrapper';
 import SideBar from '~/components/SideBar';
 
 function Projects() {
+  const [fieldTags, setFieldTags] = useState<string[]>([]);
   return (
-    <div>
+    <div className="flex justify-end">
       {/* SideBar */}
-      <SideBar />
+      <SideBar setState={setFieldTags} />
       {/* Projects show here */}
-      <ProjectWrappers />
+      <ProjectWrappers state={fieldTags} />
     </div>
   );
 }

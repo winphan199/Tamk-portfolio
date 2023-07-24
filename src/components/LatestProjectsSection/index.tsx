@@ -4,8 +4,10 @@ import * as DiIcons from 'react-icons/di';
 import * as Io5Icons from 'react-icons/io5';
 import * as SiIcons from 'react-icons/si';
 import { Swiper as SwiperType } from 'swiper';
+import { Link } from 'react-router-dom';
+import routes from '~/configs/routes';
 
-import { Section } from '../UI';
+import { Section } from '~/components/UI';
 import HorizontalSlideContent from './HorizontalSlideContent';
 import VerticalSlideShow from './VerticalSlideShow';
 import { IProject } from './Interface';
@@ -139,15 +141,27 @@ function LatestProjectsSection() {
   }, []);
 
   return (
-    <Section className="h-[1050px]">
-      <div>
-        <h6 className="text-lg mb-2 text-brand font-medium">Projects</h6>
-        <h1 className="text-2xl font-semibold">Our Outstanding Projects</h1>
-      </div>
-      <div className="mt-10 flex items-start">
-        <HorizontalSlideContent contentRef={contentRef} projects={PROJECTS} />
-        <div className="basis-2/3 mx-14 flex items-center justify-center">
-          <VerticalSlideShow slideShowRef={slideShowRef} projects={PROJECTS} />
+    <Section id="latestprojects" className="lg:h-[1050px] relative">
+      {/* Content */}
+      <div className="max-w-[1440px] mx-auto px-12">
+        <div>
+          <h6 className="text-lg mb-2 text-brand font-medium">Projects</h6>
+          <h1 className="text-2xl font-semibold">Our Outstanding Projects</h1>
+        </div>
+        <div className="mt-10 flex items-center">
+          <div className="w-full lg:w-1/3 flex flex-col">
+            <HorizontalSlideContent contentRef={contentRef} projects={PROJECTS} />
+            <Link
+              to={routes.projects}
+              target="_blank"
+              className="mt-8 px-6 py-3 rounded-lg text-lg font-semibold bg-brand text-white transition-all hover:opacity-90 lg:self-start"
+            >
+              View all projects
+            </Link>
+          </div>
+          <div className="invisible w-full mx-14 lg:flex items-center justify-center lg:visible">
+            <VerticalSlideShow slideShowRef={slideShowRef} projects={PROJECTS} />
+          </div>
         </div>
       </div>
     </Section>

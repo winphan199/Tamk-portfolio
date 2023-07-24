@@ -1,5 +1,15 @@
-function ProjectWrappers() {
-  return <main>this is where all projects are showed</main>;
+import Projects from './Projects';
+
+interface IProjectWrapperProps {
+  state: string[];
 }
 
-export default ProjectWrappers;
+function ProjectWrapper({ state }: IProjectWrapperProps) {
+  return (
+    <div className="w-4/5 bg-slate-300 min-h-screen h-full">
+      <Projects state={state} />
+    </div>
+  );
+}
+
+export default ProjectWrapper;

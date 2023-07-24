@@ -5,6 +5,7 @@ type TRoutes = {
 const routes: TRoutes = {
   home: '/',
   projects: '/projects',
+  project: '/projects/:projectId',
   upload: '/upload',
   login: '/login',
 };

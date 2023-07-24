@@ -1,4 +1,4 @@
-import { Section } from '../UI';
+import { Section } from '~/components/UI';
 import AboutCard from './AboutCard';
 
 interface AboutInfo {
@@ -44,27 +44,34 @@ const AboutInfoList: AboutInfo[] = [
 
 function AboutSection() {
   return (
-    <Section>
-      <div>
-        {AboutInfoList.map((info, index) => {
-          let imageFirst = false;
-          if (index % 2 === 0) {
-            imageFirst = true;
-          } else {
-            imageFirst = false;
-          }
-          return (
-            <AboutCard
-              key={info.id}
-              imageFirst={imageFirst}
-              title={info.title}
-              description={info.description}
-              imageUrl={info.imageUrl}
-              figure={info.figure}
-              figureTitle={info.figureTitle}
-            />
-          );
-        })}
+    <Section id="about">
+      {/* content */}
+      <div className="max-w-[1440px] mx-auto px-12">
+        <div>
+          <h6 className="text-lg mb-2 text-brand font-medium">About Us</h6>
+          <h1 className="text-2xl font-semibold">What We Offer</h1>
+        </div>
+        <div>
+          {AboutInfoList.map((info, index) => {
+            let imageFirst = false;
+            if (index % 2 === 0) {
+              imageFirst = true;
+            } else {
+              imageFirst = false;
+            }
+            return (
+              <AboutCard
+                key={info.id}
+                imageFirst={imageFirst}
+                title={info.title}
+                description={info.description}
+                imageUrl={info.imageUrl}
+                figure={info.figure}
+                figureTitle={info.figureTitle}
+              />
+            );
+          })}
+        </div>
       </div>
     </Section>
   );

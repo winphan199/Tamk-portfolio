@@ -13,7 +13,7 @@ interface IFieldCardProps {
 
 const CardWrapper = styled.div.attrs((props) => ({
   className: classNames(
-    'overflow-hidden col-span-1 h-72 flex flex-col justify-between bg-white relative rounded-lg shadow-xl p-8 hover:shadow-2xl top-0 hover:-top-1 transition-all',
+    'overflow-hidden col-span-1 flex flex-col justify-between bg-white relative rounded-lg shadow-xl p-8 hover:shadow-2xl top-0 hover:-top-1 transition-all',
     props.className,
   ),
 }))``;
@@ -55,13 +55,11 @@ function FieldCard({ name, description, techList }: IFieldCardProps) {
     }
   };
 
-  useEffect(() => {});
-
   return (
     <CardWrapper ref={FieldCardRef}>
       <div>
-        <h3 className="font-bold text-3xl text-brand line-clamp-1">{name}</h3>
-        <p className="mt-3 line-clamp-4">{description}</p>
+        <h3 className="font-bold text-lg text-brand md:text-2xl lg:line-clamp-1 lg:text-3xl">{name}</h3>
+        <p className="text-base mt-3 lg:line-clamp-4">{description}</p>
       </div>
       <Slider techList={techList} parentWidth={fieldWidth} onParentWidthChange={handleParentWidthChange} />
     </CardWrapper>
